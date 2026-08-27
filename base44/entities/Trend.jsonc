@@ -1,0 +1,52 @@
+{
+  "name": "Trend",
+  "type": "object",
+  "properties": {
+    "topic": {
+      "type": "string",
+      "title": "Topic"
+    },
+    "category": {
+      "type": "string",
+      "title": "Category"
+    },
+    "platform": {
+      "type": "string",
+      "title": "Platform"
+    },
+    "trend_strength": {
+      "type": "number",
+      "title": "Trend Strength",
+      "default": 0
+    },
+    "description": {
+      "type": "string",
+      "title": "Description"
+    },
+    "suggested_ideas": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "Suggested Ideas"
+    },
+    "is_live": {
+      "type": "boolean",
+      "title": "Is Live",
+      "default": false
+    }
+  },
+  "required": [
+    "topic"
+  ],
+  "rls": {
+    "create": true,
+    "read": true,
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}
