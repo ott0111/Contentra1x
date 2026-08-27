@@ -1,0 +1,60 @@
+{
+  "name": "Subscription",
+  "type": "object",
+  "properties": {
+    "plan": {
+      "type": "string",
+      "title": "Plan",
+      "enum": [
+        "free",
+        "pro",
+        "business"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "active",
+        "cancelled",
+        "expired",
+        "pending"
+      ],
+      "default": "active"
+    },
+    "provider": {
+      "type": "string",
+      "title": "Provider",
+      "default": "paypal"
+    },
+    "provider_order_id": {
+      "type": "string",
+      "title": "Provider Order ID"
+    },
+    "amount": {
+      "type": "number",
+      "title": "Amount",
+      "default": 0
+    },
+    "currency": {
+      "type": "string",
+      "title": "Currency",
+      "default": "USD"
+    }
+  },
+  "required": [
+    "plan"
+  ],
+  "rls": {
+    "create": true,
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}
