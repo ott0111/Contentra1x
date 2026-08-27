@@ -1,0 +1,56 @@
+{
+  "name": "Client",
+  "type": "object",
+  "properties": {
+    "company": {
+      "type": "string",
+      "title": "Company"
+    },
+    "contact": {
+      "type": "string",
+      "title": "Contact"
+    },
+    "email": {
+      "type": "string",
+      "title": "Email"
+    },
+    "website": {
+      "type": "string",
+      "title": "Website"
+    },
+    "industry": {
+      "type": "string",
+      "title": "Industry"
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notes"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "Active",
+        "Onboarding",
+        "Paused",
+        "Churned"
+      ],
+      "default": "Onboarding"
+    }
+  },
+  "required": [
+    "company"
+  ],
+  "rls": {
+    "create": true,
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}
