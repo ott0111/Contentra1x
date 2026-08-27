@@ -1,0 +1,71 @@
+{
+  "name": "CalendarEvent",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Title"
+    },
+    "platform": {
+      "type": "string",
+      "title": "Platform",
+      "enum": [
+        "TikTok",
+        "YouTube",
+        "Instagram",
+        "X",
+        "Facebook",
+        "LinkedIn",
+        "Twitch",
+        "Threads"
+      ]
+    },
+    "content_type": {
+      "type": "string",
+      "title": "Content Type"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "Draft",
+        "In Progress",
+        "Review",
+        "Approved",
+        "Scheduled",
+        "Published",
+        "Archived"
+      ],
+      "default": "Scheduled"
+    },
+    "scheduled_date": {
+      "type": "string",
+      "format": "date",
+      "title": "Scheduled Date"
+    },
+    "content_id": {
+      "type": "string",
+      "title": "Content ID"
+    },
+    "campaign_id": {
+      "type": "string",
+      "title": "Campaign ID"
+    }
+  },
+  "required": [
+    "title",
+    "scheduled_date"
+  ],
+  "rls": {
+    "create": true,
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}
