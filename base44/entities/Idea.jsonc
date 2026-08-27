@@ -1,0 +1,126 @@
+{
+  "name": "Idea",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Title"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description"
+    },
+    "platform": {
+      "type": "string",
+      "title": "Platform",
+      "enum": [
+        "TikTok",
+        "YouTube",
+        "Instagram",
+        "X",
+        "Facebook",
+        "LinkedIn",
+        "Twitch",
+        "Threads"
+      ]
+    },
+    "category": {
+      "type": "string",
+      "title": "Category",
+      "enum": [
+        "Educational",
+        "Entertainment",
+        "Promotional",
+        "Personal Brand",
+        "Storytelling",
+        "Tutorial",
+        "Review",
+        "News",
+        "Commentary",
+        "Behind the Scenes",
+        "Community",
+        "Trend",
+        "Other"
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "Tags"
+    },
+    "priority": {
+      "type": "string",
+      "title": "Priority",
+      "enum": [
+        "Low",
+        "Medium",
+        "High"
+      ],
+      "default": "Medium"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "Idea",
+        "Developing",
+        "Planned",
+        "In Progress",
+        "Scheduled",
+        "Published",
+        "Archived"
+      ],
+      "default": "Idea"
+    },
+    "target_audience": {
+      "type": "string",
+      "title": "Target Audience"
+    },
+    "content_type": {
+      "type": "string",
+      "title": "Content Type"
+    },
+    "estimated_potential": {
+      "type": "string",
+      "title": "Estimated Potential",
+      "enum": [
+        "Low",
+        "Medium",
+        "High"
+      ]
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notes"
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "References"
+    },
+    "favorite": {
+      "type": "boolean",
+      "title": "Favorite",
+      "default": false
+    }
+  },
+  "required": [
+    "title"
+  ],
+  "rls": {
+    "create": true,
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}
