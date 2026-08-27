@@ -1,0 +1,54 @@
+{
+  "name": "Template",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description"
+    },
+    "platform": {
+      "type": "string",
+      "title": "Platform",
+      "enum": [
+        "TikTok",
+        "YouTube",
+        "Instagram",
+        "X",
+        "Facebook",
+        "LinkedIn",
+        "Twitch",
+        "Threads"
+      ]
+    },
+    "category": {
+      "type": "string",
+      "title": "Category"
+    },
+    "content_structure": {
+      "type": "string",
+      "title": "Content Structure"
+    },
+    "is_custom": {
+      "type": "boolean",
+      "title": "Custom",
+      "default": true
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "rls": {
+    "create": true,
+    "read": true,
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}
