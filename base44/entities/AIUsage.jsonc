@@ -1,0 +1,43 @@
+{
+  "name": "AIUsage",
+  "type": "object",
+  "properties": {
+    "feature": {
+      "type": "string",
+      "title": "Feature",
+      "enum": [
+        "idea_generation",
+        "script_generation",
+        "caption_generation",
+        "repurposing",
+        "ai_analysis",
+        "chat",
+        "strategy"
+      ]
+    },
+    "request_type": {
+      "type": "string",
+      "title": "Request Type"
+    },
+    "success": {
+      "type": "boolean",
+      "title": "Success",
+      "default": true
+    }
+  },
+  "required": [
+    "feature"
+  ],
+  "rls": {
+    "create": true,
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}
