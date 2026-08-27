@@ -1,0 +1,144 @@
+{
+  "name": "Content",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Title"
+    },
+    "platform": {
+      "type": "string",
+      "title": "Platform",
+      "enum": [
+        "TikTok",
+        "YouTube",
+        "Instagram",
+        "X",
+        "Facebook",
+        "LinkedIn",
+        "Twitch",
+        "Threads"
+      ]
+    },
+    "content_type": {
+      "type": "string",
+      "title": "Content Type",
+      "enum": [
+        "Short-form video",
+        "Long-form video",
+        "Reel",
+        "TikTok",
+        "YouTube Short",
+        "YouTube video",
+        "X post",
+        "X thread",
+        "Instagram post",
+        "Carousel",
+        "LinkedIn post",
+        "Livestream",
+        "Story",
+        "Other"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "Draft",
+        "In Progress",
+        "Review",
+        "Approved",
+        "Scheduled",
+        "Published",
+        "Archived"
+      ],
+      "default": "Draft"
+    },
+    "campaign_id": {
+      "type": "string",
+      "title": "Campaign ID"
+    },
+    "goal": {
+      "type": "string",
+      "title": "Goal",
+      "enum": [
+        "Awareness",
+        "Engagement",
+        "Growth",
+        "Conversion",
+        "Education",
+        "Community",
+        "Sales",
+        "Personal Brand"
+      ]
+    },
+    "publish_date": {
+      "type": "string",
+      "format": "date",
+      "title": "Publish Date"
+    },
+    "audience": {
+      "type": "string",
+      "title": "Audience"
+    },
+    "script": {
+      "type": "string",
+      "title": "Script"
+    },
+    "caption": {
+      "type": "string",
+      "title": "Caption"
+    },
+    "hook": {
+      "type": "string",
+      "title": "Hook"
+    },
+    "cta": {
+      "type": "string",
+      "title": "CTA"
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notes"
+    },
+    "idea_id": {
+      "type": "string",
+      "title": "Source Idea ID"
+    },
+    "views": {
+      "type": "number",
+      "title": "Views",
+      "default": 0
+    },
+    "likes": {
+      "type": "number",
+      "title": "Likes",
+      "default": 0
+    },
+    "comments": {
+      "type": "number",
+      "title": "Comments",
+      "default": 0
+    },
+    "shares": {
+      "type": "number",
+      "title": "Shares",
+      "default": 0
+    }
+  },
+  "required": [
+    "title"
+  ],
+  "rls": {
+    "create": true,
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}
